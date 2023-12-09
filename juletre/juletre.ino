@@ -15,6 +15,7 @@
 #define NUM_PIXELS 20            // The number of LEDs (pixels) on WS2812B
 #define PIN_CYCLE_INTERRUPT 13   // TODO: what pin?
 #define PIN_MOTION_INTERRUPT 14  // TODO: what pin?
+#define PIN_SOUND 12
 
 #define timeSeconds 1
 
@@ -39,16 +40,22 @@ void setup() {
 
   WS2812B.begin();  // INITIALIZE WS2812B strip object (REQUIRED)
 
-  // initXmas();
   attachInterrupt(digitalPinToInterrupt(PIN_CYCLE_INTERRUPT), cycleMode, FALLING);
 
   // PIR Motion Sensor mode INPUT_PULLUP
   pinMode(PIN_MOTION_INTERRUPT, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(PIN_MOTION_INTERRUPT), detectsMovement, RISING);
+
+  pinMode(PIN_SOUND, OUTPUT);
+  noTone(PIN_SOUND);
+  // initXmas();
 }
 
 void loop() {
   Serial.println("Looping...");
+  // tone(PIN_SOUND, 1000);  // Send 1KHz sound signal...
+  // delay(3000);
+  // noTone(PIN_SOUND);
 
   // Current time
   now = millis();
