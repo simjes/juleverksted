@@ -8,6 +8,11 @@ Starting with 1.6.4, Arduino allows installation of third-party platform package
 - Open Boards Manager from Tools > Board menu and install *esp8266* platform (and don't forget to select your ESP8266 board from Tools > Board menu after installation).
 - Select `LOLIN(WEMOS) D1 mini Lite`
 
+## Libraries needed
+
+Adafruit NeoPixel - Download from Arduino IDE Library Manager
+Pitches - Download zip file from `https://github.com/hibit-dev/buzzer/blob/master/lib/pitches.zip` and add through *Sketch>Include Library>Add .ZIP Library...*
+
 ## Latest release [![Latest release](https://img.shields.io/github/release/esp8266/Arduino.svg)](https://github.com/esp8266/Arduino/releases/latest/)
 
 Boards manager link: `https://arduino.esp8266.com/stable/package_esp8266com_index.json`
